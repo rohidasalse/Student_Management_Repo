@@ -10,13 +10,13 @@ public class TeacherRegistrationDAO {
 		int k=0;
 		try {
 			Connection con=DBConnection.getCon();	
-			PreparedStatement pst = con.prepareStatement("insert into teachers values(?,?,?,?,?,?)");
-			pst.setString(1, tb.getTeacher_id());
-			pst.setString(2,tb.getName());
-			pst.setString(3,tb.getEmail());
-			pst.setString(4,tb.getPassword());
-			pst.setString(5,tb.getSubject());
-			pst.setString(6,tb.getDepartment());
+			PreparedStatement pst = con.prepareStatement("insert into teachers values('T' || teacher_seq.NEXTVAL,?,?,?,?,?)");
+//			pst.setString(1, tb.getTeacher_id());
+			pst.setString(1,tb.getName());
+			pst.setString(2,tb.getEmail());
+			pst.setString(3,tb.getPassword());
+			pst.setString(4,tb.getSubject());
+			pst.setString(5,tb.getDepartment());
 	
 			k = pst.executeUpdate();
 		}

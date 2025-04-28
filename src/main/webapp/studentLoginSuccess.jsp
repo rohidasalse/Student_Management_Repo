@@ -1,8 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
 	import="com.studentmanagementsystem.bean.*,java.util.*"%>
+
+
+
+
+	
 <%
 String msg = (String) request.getAttribute("msg");
+
 RegistrationBean rb = (RegistrationBean) session.getAttribute("rb");
 String name=rb.getFullname();
 String sid=rb.getStudentrollnumber();
@@ -12,6 +18,7 @@ String branch=rb.getBranch();
 String bloodgroup=rb.getBloodgroup();
 
 %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +85,7 @@ String bloodgroup=rb.getBloodgroup();
         <a href="#">Dashboard</a>
         <a href="#">My Profile</a>
         <a href="#">Class Schedule</a>
-        <a href="#">Assignments</a>
+        <a href="viewAssignmentsstudent">Assignments</a>
         <a href="#">Exams & Results</a>
         <a href="#">Attendance</a>
         <a href="#">Notices</a>
@@ -102,6 +109,8 @@ String bloodgroup=rb.getBloodgroup();
             </div>
         </div>
     </div>
+
+
 
 </body>
 </html>

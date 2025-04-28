@@ -16,7 +16,7 @@ public class RegisterationServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		RegistrationBean rb=new RegistrationBean();
 		rb.setFullname(req.getParameter("fullname"));
-		rb.setStudentrollnumber(req.getParameter("studentrollnumber"));
+//		rb.setStudentrollnumber(req.getParameter("studentrollnumber"));
 		rb.setEmail(req.getParameter("email"));
 		rb.setGender(req.getParameter("gender"));
 		rb.setBranch(req.getParameter("branch"));

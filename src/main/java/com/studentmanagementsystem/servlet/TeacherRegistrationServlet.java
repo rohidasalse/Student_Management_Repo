@@ -18,7 +18,7 @@ public class TeacherRegistrationServlet extends HttpServlet{
 	HttpSession hs=req.getSession(false);
 	TeacherBean tb=new TeacherBean();
 	System.out.println("teacher registration form");
-	tb.setTeacher_id(req.getParameter("teacherid"));
+//	tb.setTeacher_id(req.getParameter("teacherid"));
 	tb.setName(req.getParameter("fullname"));
 	tb.setEmail(req.getParameter("email"));
 	tb.setPassword(req.getParameter("password"));

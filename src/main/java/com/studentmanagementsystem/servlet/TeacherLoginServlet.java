@@ -18,11 +18,13 @@ public class TeacherLoginServlet extends HttpServlet{
 		HttpSession hs=req.getSession();
 		TeacherBean tb=	TeacherLoginDAO.login(req.getParameter("teacher_id"),req.getParameter("password"));
 		
-		if(tb==null) {
+
+		 if(tb==null) {
 			req.setAttribute("msg","Username or Password something is wrong");
 			req.getRequestDispatcher("teacherLoginError.jsp").forward(req, resp);
 		}
 		else {
+			System.out.println(hs);
 			hs.setAttribute("tb", tb);
 			req.setAttribute("msg"," Login successful...");
 			req.getRequestDispatcher("teacherLoginSuccess.jsp").forward(req, resp);

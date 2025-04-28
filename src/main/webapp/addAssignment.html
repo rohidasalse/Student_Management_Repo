@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Add Assignment</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS CDN -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+	<div class="container py-5">
+		<div class="row justify-content-center">
+			<div class="col-md-8 col-lg-6">
+				<div class="card shadow-sm">
+					<div class="card-header bg-primary text-white text-center">
+						<h4 class="mb-0">Add New Assignment</h4>
+					</div>
+					<div class="card-body">
+						<form action="upload" method="post" enctype="multipart/form-data">
+
+							<div class="mb-3 d-flex justify-content-between">
+								<div class="w-50 me-2">
+									<label for="title" class="form-label">Title</label>
+									<input type="text" class="form-control" id="title" name="title" required>
+								</div>
+								<div class="w-50">
+									<label for="subject" class="form-label">Subject</label>
+									<input type="text" class="form-control" id="subject" name="subject" required>
+								</div>
+							</div>
+
+							<div class="mb-3">
+								<label for="description" class="form-label">Description</label>
+								<textarea class="form-control" id="description" name="description" rows="4"
+									required></textarea>
+							</div>
+
+							<div class="mb-3 d-flex justify-content-between">
+
+								<div class="w-50">
+									<label for="due_date" class="form-label">Due Date</label>
+									<input type="date" class="form-control" id="due_date" name="due_date" required>
+								</div>
+							</div>
+
+							<div class="mb-3">
+
+
+								<label>Select File:</label>
+								<input type="file" name="file" accept=".pdf,.txt" required><br><br>
+
+
+							</div>
+
+							<div class="d-flex">
+								<button type="submit" class="btn btn-primary me-2">Add Assignment</button>
+								<a href="teacherLoginSuccess.jsp" class="btn btn-danger">Cancel Assignment</a>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap JS CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

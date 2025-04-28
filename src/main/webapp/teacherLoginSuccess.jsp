@@ -3,6 +3,8 @@
 	import="com.studentmanagementsystem.bean.*,java.util.*"%>
 <%
 String msg = (String) request.getAttribute("msg");
+String assignment_added_success = (String) request.getAttribute("assignment_added_success");
+
 TeacherBean tb = (TeacherBean) session.getAttribute("tb");
 String name = tb.getName();
 String tid = tb.getTeacher_id();
@@ -84,7 +86,7 @@ body {
 
 	<div class="sidebar">
 		<h2>Teacher Panel</h2>
-		<a href="#">Dashboard</a> <a href="manageStudents">Manage Students</a> <a href="#">Assignments</a>
+		<a href="#">Dashboard</a> <a href="manageStudents">Manage Students</a> <a href="assignmentList.jsp">Assignments</a>
 		<a href="#">Attendance</a> <a href="logoutTeacher.jsp">Logout</a>
 	</div>
 
@@ -116,12 +118,20 @@ body {
 				<h3>Actions</h3>
 				<ul>
 					<li><a href="manageStudents">View & Manage Students</a></li>
-					<li><a href="#">Upload Assignments</a></li>
+					<li><a href="addAssignment.html">Upload Assignments</a></li>
 					<li><a href="#">Mark Attendance</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+    window.onload = function() {
+        <% if (assignment_added_success != null) { %>
+            alert("<%= assignment_added_success.replace("\"", "\\\"") %>");
+        <% } %>
+    };
+</script>
+	
 
 </body>
 </html>

@@ -12,19 +12,20 @@ public int register(RegistrationBean rb) {
 	try {
 		
 		Connection con=DBConnection.getCon();
-		PreparedStatement pst = con.prepareStatement("insert into student values(?,?,?,?,?,?,?)");
+		PreparedStatement pst = con.prepareStatement("insert into student values(?,'STU' || student_roll_seq.NEXTVAL,?,?,?,?,?)");
 		pst.setString(1, rb.getFullname());
-		pst.setString(2, rb.getStudentrollnumber());
-		pst.setString(3, rb.getEmail());
-		pst.setString(4, rb.getGender());
-		pst.setString(5, rb.getBranch());
-		pst.setString(6, rb.getBloodgroup());
-		pst.setString(7, rb.getPassword());
+//		pst.setString(2, rb.getStudentrollnumber());
+		pst.setString(2, rb.getEmail());
+		pst.setString(3, rb.getGender());
+		pst.setString(4, rb.getBranch());
+		pst.setString(5, rb.getBloodgroup());
+		pst.setString(6, rb.getPassword());
 		k = pst.executeUpdate();
 //		ResultSet executeQuery = pst.executeQuery();
 	}
 	catch(Exception e) {
-		e.printStackTrace();
+		System.out.println("connection fail");
+//		e.printStackTrace();
 		
 	}
 	return k;

@@ -5,8 +5,10 @@
 <%
 HttpSession hs = request.getSession(false);
 
+	
+	hs.setAttribute("tb", null);
 	hs.invalidate();
-
+	hs.removeAttribute("tb");
 
 response.sendRedirect("index.html");
 %>
